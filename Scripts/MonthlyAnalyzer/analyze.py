@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 
-file_name = "../../messageFiles/sele/message.json"
+file_name = "../../messageFiles/sumi/message.json"
 
 with open(file_name, "r") as read_file:
     data = json.load(read_file)
@@ -30,7 +30,10 @@ for x in xrange(len(count_dictionary)):
     for month in xrange(1,13):
         xtick = str(month) +"-"+ str(startingYear)
         names.append(xtick)
-        heights.append(count_dictionary[startingYear][month])
+        if startingYear not in count_dictionary:
+            heights.append(0)
+        else:
+            heights.append(count_dictionary[startingYear][month])
 
 y_pos = np.arange(len(heights))
 
