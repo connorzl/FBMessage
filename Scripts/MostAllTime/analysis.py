@@ -2,9 +2,11 @@ import os
 import json
 from datetime import datetime
 from heapq import nlargest
+from tqdm import tqdm
 
 def main():
 	path = "../../messages/inbox"
+        # path = "../../../facebookdata/messages/inbox"
 	l = os.listdir(path) # dir is your directory path
 	number_files = len(l)
 	print(number_files)
@@ -14,7 +16,7 @@ def main():
 
 	lens = []
 
-	for s in l[1:len(l)-1]:
+	for s in tqdm(l[1:len(l)-1]):
 		files = os.listdir(path + "/" + s)
 		with open(path + "/" + s + '/message.json') as f:
 			data = json.load(f)
@@ -40,6 +42,5 @@ def main():
 
 	for l in x:
 		print(l)
-	print(x)
 
 main()
