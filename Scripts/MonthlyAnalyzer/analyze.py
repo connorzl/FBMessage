@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 
-file_name = "messageFiles/sele/message.json"
+file_name = "../../messageFiles/sele/message.json"
 
 with open(file_name, "r") as read_file:
     data = json.load(read_file)
