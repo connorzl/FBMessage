@@ -5,15 +5,17 @@ import calendar
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 file_name = "../../messageFiles/sumi/message.json"
+file_name = "/Users/rohany/Documents/facebookdata/messages/inbox/AxelFeldmann_thmy6Zf0aA/message.json"
 
 with open(file_name, "r") as read_file:
     data = json.load(read_file)
 
 count_dictionary = {}
 oldestYear = 2020
-for message in data["messages"]:
+for message in tqdm(data["messages"]):
     message_time = datetime.datetime.fromtimestamp(int(message["timestamp_ms"])/1000.0)
     year = message_time.year
     month = message_time.month
