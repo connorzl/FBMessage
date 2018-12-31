@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 from tqdm import tqdm
 from operator import add
-file_name = "../../messageFiles/Vay/message.json"
+file_name = "../../messageFiles/elain/message.json"
 
 with open(file_name, "r") as read_file:
     data = json.load(read_file)
@@ -27,6 +27,8 @@ for message in tqdm(data["messages"]):
 
 f, axarr = plt.subplots(len(count_dictionary.keys()), sharex=True,sharey=True)
 f.suptitle("Time Analysis of " + data["title"])
+# f.xlabel("24HR time")
+# f.ylabel("Number of messages")
 print len(axarr)
 index= 0
 labels = [str(i) for i in xrange(24)]
@@ -36,9 +38,10 @@ for name in count_dictionary:
     axarr[index].bar(y_pos,count_dictionary[name])
     axarr[index].set_xticks(y_pos,labels)
     axarr[index].set_title(name)
-
+    axarr[index].set_ylabel("Number of messages")
     index+=1
 
+axarr[-1].set_xlabel("24hr time")
 plt.show()
     
     
