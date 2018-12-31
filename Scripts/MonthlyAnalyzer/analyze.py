@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from operator import add
-file_name = "../../messageFiles/flaker/message.json"
+file_name = "../../messageFiles/Gus/message.json"
 
 with open(file_name, "r") as read_file:
     data = json.load(read_file)
