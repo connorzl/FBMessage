@@ -11,7 +11,7 @@ def main():
 	parser.add_argument('--path', action='append', type=str, help='Relative path to a messages directory. Repeat this flag to analyze several messages directories together.')
 	parser.add_argument('--include_group_chats', dest='group_chats', action='store_true', help='Include group chats in analysis.')
 	parser.add_argument('--ignore_group_chats', dest='group_chats', action='store_false', help='Ignore group chats in analysis.')
-	parser.set_defaults(path='../../messages/inbox')
+	parser.set_defaults(path='../../messages')
 	parser.set_defaults(group_chats=True)
 	args = parser.parse_args()
 
