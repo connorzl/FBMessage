@@ -2,7 +2,9 @@
 
 install tqdm with `pip install tqdm`
 
-Comment out 22/23 to include group chats
+pass in an input message directory using --path 'relative-path-to-messages-dir'
+
+group chats are toggled using --include_group_chats and --ignore_group chats
 
 # running
 
